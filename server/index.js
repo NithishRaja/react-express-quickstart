@@ -16,7 +16,7 @@ configureViews(app);
 configureRoutes(app);
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 if(exports.main === module){
   app.listen(app.get("port"), function(err){
