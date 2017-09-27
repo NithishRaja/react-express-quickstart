@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 var bodyparser = require("body-parser");
 var session = require('express-session');
+var cookieParser = require("cookie-parser");
 
 var configureViews = require("./views");
 var configureRoutes = require("./routes");
@@ -9,6 +10,7 @@ var configureSessionDatabase = require("./database/redisConnection");
 
 const app = express();
 
+app.use(cookieParser("cookie-parser"));
 app.use(session(configureSessionDatabase(session)));
 
 app.set("port", process.env.PORT || 5000);

@@ -7,7 +7,7 @@
 ## Editing code
 * server side code is inside **server** directory
 * client side code is inside **client** directory
-* static content is inside **public** directory inside **client** directory
+* static content should be placed inside **server/public** directory
 
 ## running app
 * run `npm start`, starts server on localhost port 5000
