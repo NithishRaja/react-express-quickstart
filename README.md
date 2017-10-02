@@ -10,6 +10,8 @@
 * server side code is inside **server** directory
 * client side code is inside **client** directory
 * static content should be placed inside **server/public** directory
+* connection to mongodb is provided. Replace `YOUR_DATABASE_NAME_HERE` and `YOUR_COLLECTION_NAME` with your preference
+* provide data object inside `setDefaults.js`
 
 ## running app
 
