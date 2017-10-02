@@ -6,7 +6,7 @@ var cookieParser = require("cookie-parser");
 
 var configureViews = require("./views");
 var configureRoutes = require("./routes");
-var configureSessionDatabase = require("./database/redisConnection");
+var configureSessionDatabase = require("./database/redis");
 
 const app = express();
 
