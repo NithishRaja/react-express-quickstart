@@ -35,8 +35,13 @@ LOGIN
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 
 <script>
-  $("facebook-login").on("click", function(event){
+  $("#facebook-login").on("click", function(event){
     event.preventDefault();
+    FB.login(function(res){
+      FB.api(`/me`, {fields:"email"}, function(response){
+        console.log(response);
+      });
+    }, {scope: 'email'});
   });
 </script>
 
