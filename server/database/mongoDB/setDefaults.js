@@ -5,7 +5,9 @@ module.exports = function(mongo){
   var query = {};
 
   var newDocument = {
-    $setOnInsert: //your data object comes here
+    $setOnInsert: {
+      //your data object comes here
+    }
   };
 
   var options = {

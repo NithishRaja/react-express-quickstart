@@ -1,0 +1,43 @@
+<%- contentFor("title") %>
+LOGIN
+
+<$- contentFor("body") $>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    LOGIN
+  </div>
+  <div class="panel-body">
+    <button id="facebook-login" class="btn btn-primary">Login with facebook</button>
+  </div>
+</div>
+
+<!-- async importing of facebook's javascript CDN -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1452783914788190',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+<script>
+  $("facebook-login").on("click", function(event){
+    event.preventDefault();
+  });
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" />
