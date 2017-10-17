@@ -7,6 +7,9 @@ module.exports = function(app){
 
   // setting up normal routes
   app.route("/")
-    .get(middleware.renderHome);
+    .get(middleware.loginCheck, middleware.renderHome);
+
+  app.route("/login")
+    .get(middleware.renderLogin);
 
 }
