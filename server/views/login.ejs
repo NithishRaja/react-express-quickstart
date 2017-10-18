@@ -43,6 +43,9 @@ LOGIN
           type: "POST",
           url: "/login/auth",
           data: response,
+          xhrFields: {
+            withCredentials: true
+          },
           success: function(data, textStatus){
             console.log(data.redirect);
             if(data.redirect){

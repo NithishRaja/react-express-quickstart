@@ -13,8 +13,5 @@ module.exports = function(app){
     .get(middleware.renderLogin);
 
   app.route("/login/auth")
-  .post(function(req, res){
-    req.session.isLoggedIn = true;
-    res.json({"redirect" : "/"});
-  });
+  .post(middleware.authenticate);
 };
