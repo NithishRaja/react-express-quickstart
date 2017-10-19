@@ -5,13 +5,15 @@ module.exports = function(mongo){
   var query = {};
 
   var newDocument = {
-    $setOnInsert: //your data object comes here
+    $setOnInsert: {
+      //your data object comes here
+    }
   };
 
   var options = {
     upsert: true,
     returnOriginal: false
-  }
+  };
 
   // if data doesn't exist update database
   collection.findOneAndUpdate(query, newDocument, options, function(err, res){

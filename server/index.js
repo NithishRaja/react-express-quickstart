@@ -2,14 +2,13 @@
 const express = require('express');
 const path = require('path');
 var bodyparser = require("body-parser");
-var session = require('express-session');
+var session = require('cookie-session');
 var cookieParser = require("cookie-parser");
 
 // importing local modules
 var configureViews = require("./views");
 var configureRoutes = require("./routes");
 var configureMainDatabase = require("./database/mongoDB").connect;
-var configureSessionDatabase = require("./database/redis");
 
 // initializing express app
 const app = express();
@@ -19,7 +18,7 @@ app.set("port", process.env.PORT || 5000);
 
 // setting up cookies and sessions
 app.use(cookieParser("cookie-parser"));
-app.use(session(configureSessionDatabase(session)));
+app.use(session({keys:["mykey"]}));
 
 // using body-parser to read post info
 app.use(bodyparser.urlencoded({extended:true}));
