@@ -1,1 +1,5 @@
 node_modules
+mongod.exe
+mongo.exe
+libeay32.dll
+ssleay32.dll
