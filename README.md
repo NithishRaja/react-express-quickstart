@@ -13,6 +13,7 @@
 * static content should be placed inside **server/public** directory
 * connection to mongodb is provided. Replace `YOUR_DATABASE_NAME_HERE` and `YOUR_COLLECTION_NAME` with your preference
 * provide data object inside `setDefaults.js`
+* add a `/logout` route to logout of the app
 
 ## running app
 
