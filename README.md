@@ -9,12 +9,14 @@
 
 * server side code is inside **server** directory
 * client side code is inside **client** directory
+* facebook app id is present inside **views/login.ejs**. change the app id to your app id
 * static content should be placed inside **server/public** directory
 * connection to mongodb is provided. Replace `YOUR_DATABASE_NAME_HERE` and `YOUR_COLLECTION_NAME` with your preference
 * provide data object inside `setDefaults.js`
 
 ## running app
 
+* run `mongod` to start the mongo database server
 * run `npm start`, starts server on localhost port 5000
 * go to client directory and run `npm start`, starts server on port 3000
 * requests sent from client uses `proxy` to reach server
