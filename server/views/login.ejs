@@ -2,12 +2,12 @@
 LOGIN
 
 <%- contentFor("body") %>
-<div class="panel panel-default">
+<div class="panel panel-warning col-md-offset-4 col-md-4">
   <div class="panel-heading">
     LOGIN
   </div>
   <div class="panel-body">
-    <button id="facebook-login" class="btn btn-primary">Login with facebook</button>
+    <button id="facebook-login" class="col-md-offset-4 btn btn-primary">Login with facebook</button>
   </div>
 </div>
 
@@ -59,3 +59,13 @@ LOGIN
 </script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css" />
+<style>
+  .panel-heading{
+    text-align: center;
+  }
+  .panel{
+    margin-top: 150px;
+    padding: 0px;
+  }
+</style>
