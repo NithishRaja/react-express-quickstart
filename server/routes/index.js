@@ -14,4 +14,7 @@ module.exports = function(app){
 
   app.route("/login/auth")
   .post(middleware.authenticate);
+
+  app.route("/logout")
+    .get(middleware.logout);
 };
