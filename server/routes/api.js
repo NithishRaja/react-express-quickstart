@@ -1,8 +1,8 @@
 var middleware = require("./../middleware");
 
-module.exports = function(app){
+module.exports = function(api){
 
-  app.route("/api/passwords")
+  api.route("/api/passwords")
     .get(middleware.api.generatePasswords);
 
 }

@@ -8,7 +8,8 @@ function startWorker(){
 }
 if(cluster.isMaster){
   require('os').cpus().forEach(function(){
-    startWorker()
+    console.log("Server is running on port %d, press Ctrl+C to close", server.get("port"));
+    startWorker();
   });
   cluster.on('disconnect', function(worker){
     console.log('CLUSTER: Worker %d disconnected from the cluster.', worker.id);
@@ -20,6 +21,5 @@ if(cluster.isMaster){
 }else{
   server.listen(server.get("port"), function(err){
     if(err) return console.log(err);
-    console.log("Server is running on port %d, press Ctrl+C to close", server.get("port"));
   });
 }

@@ -4,6 +4,7 @@ const path = require('path');
 var bodyparser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var session = require("cookie-session");
+var vhost = require("vhost");
 
 //importing local modules
 var configureViews = require("./views");
@@ -11,6 +12,7 @@ var configureRoutes = require("./routes");
 
 // initializing express app
 const app = express();
+const api = express();
 
 // setting port value
 app.set("port", process.env.PORT || 5000);
@@ -26,8 +28,11 @@ app.use(bodyparser.json());
 // setting up views
 configureViews(app);
 
+// setting up separate subdomain for api calls
+app.use(vhost("api.localhost", api));
+
 // setting up routes
-configureRoutes(app);
+configureRoutes(app, api);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'public')));
