@@ -10,6 +10,7 @@
 * server side code is inside **server** directory
 * client side code is inside **client** directory
 * static content should be placed inside **server/public** directory
+* note: session variables are not shared between app and api routes
 
 ## running app
 
