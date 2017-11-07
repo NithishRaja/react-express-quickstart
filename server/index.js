@@ -4,6 +4,7 @@ const path = require('path');
 var bodyparser = require("body-parser");
 var session = require('cookie-session');
 var cookieParser = require("cookie-parser");
+var vhost = require("vhost");
 
 // importing local modules
 var configureViews = require("./views");
@@ -12,6 +13,7 @@ var configureMainDatabase = require("./database/mongoDB").connect;
 
 // initializing express app
 const app = express();
+const api = express();
 
 // setting port value
 app.set("port", process.env.PORT || 5000);
@@ -30,8 +32,11 @@ configureMainDatabase(app);
 // setting up views
 configureViews(app);
 
+// setting up separate subdomain for api calls
+app.use(vhost("api.localhost", api));
+
 // setting up routes
-configureRoutes(app);
+configureRoutes(app, api);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'public')));
