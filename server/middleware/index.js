@@ -1,9 +1,7 @@
-var path = require("path");
 var apiMiddleware = require("./api");
+var renderHome = require("./renderHome");
 
-exports.renderHome = function(req, res){
-  res.render("home");
+module.exports = {
+  api: apiMiddleware,
+  renderHome: renderHome
 }
-
-// exporting middleware for api routes
-exports.api = apiMiddleware;
