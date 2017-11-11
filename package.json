@@ -16,6 +16,7 @@
     "express": "~4.15.2",
     "express-ejs-layouts": "^2.3.1",
     "mongodb": "^2.2.31",
+    "node-redis-session": "^0.3.3",
     "password-generator": "^2.1.0",
     "serve-favicon": "~2.4.2",
     "vhost": "^3.0.2"
